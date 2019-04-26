@@ -2,7 +2,7 @@
 session_start();
 
 //turn on error reporting
-ini_set('display_errors', 1);
+ini_set('display_errors', TRUE);
 error_reporting(E_ALL);
 
 //require autoload file
@@ -49,14 +49,14 @@ $f3->route('GET /@item', function ($f3, $params) {
 
 
 //begin order
-$f3->route('GET /order', function() {
+$f3->route('GET|POST /order', function() {
     //display a view
     $view = new Template();
     echo $view->render('views/form1.html');
 });
 
 //second step of order
-$f3->route('POST /order2', function () {
+$f3->route('GET|POST /order2', function () {
 
     //print_r($_POST);
     //save form info in session for next form
