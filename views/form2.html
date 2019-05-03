@@ -14,12 +14,15 @@
 <body>
 
 <!-- fat-free shortcut, could also be in regular php-->
-<form action="#" method="post" class="form-horizontal">
+check if="{{ isset(@errors['color']) }}">
+<p>{{ @errors['color'] }}</p>
+</check>
+<form action="#" method="post">
     <label>Color</label>
-    <select class="form-control" name="color" id="color">
+    <select name="color">
         <option>--Select a color--</option>
-        <repeat group="{{@colors}}" value="{{@colorOption}}">
-            <option>{{@colorOption}}</option>
+        <repeat group="{{@colors}}" value="{{@color}}">
+            <option>{{@color}}</option>
         </repeat>
     </select>
     <button type="submit">Submit</button>
