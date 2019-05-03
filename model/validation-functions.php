@@ -1,7 +1,7 @@
 <?php
 
-/* validate a color
- *
+
+/** Validate a color
  * @param String color
  * @return boolean
  */
@@ -10,13 +10,7 @@ function validColor($color) {
     return in_array($color, $f3->get('colors'));
 }
 
-/*
- * Validate a string
- *
- * @param String animal
- * @return boolean
- */
-function validString($animal) {
+function validString($string) {
     if(!empty($string) && ctype_alpha($string)) {
         return true;
     }
